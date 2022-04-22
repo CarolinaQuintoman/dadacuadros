@@ -1,12 +1,13 @@
 import React from 'react'
-import NavBarLogo from '../../assets/navbar-logo.svg'
+import NavBarLogo from '../../assets/logoDada.png'
+import CardWidgest from '../CardWidgest/CardWidgest'
 
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div className="container">
-                <a className="navbar-brand" href="#page-top"><img src={NavBarLogo} width={200} alt="..." /></a>
+                <a className="navbar-brand" href="#page-top"><img src={NavBarLogo} width={200} height={150} alt="..." /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i className="fas fa-bars ms-1"></i>
@@ -19,6 +20,7 @@ const NavBar = () => {
                         <li className="nav-item"><a className="nav-link" href="#team">Servicios</a></li>
                         <li className="nav-item"><a className="nav-link" href="#contact">Contacto</a></li>
                     </ul>
+                    <CardWidgest />
                 </div>
             </div>
     </nav>
