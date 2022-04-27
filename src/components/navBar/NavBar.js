@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBarLogo from '../../assets/logoDada.png'
-import CardWidgest from '../CardWidgest/CardWidgest'
+import NavBarLogo from '../../assets/dadalogo4.png';
+import CardWidgest from '../CardWidgest/CardWidgest';
 
 
 const NavBar = () => {
