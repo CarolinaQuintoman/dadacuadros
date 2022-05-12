@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import NavBarLogo from '../../assets/logo_small.png';
 import CardWidgest from '../CardWidgest/CardWidgest';
-//import { NavLink } from 'react-router-dom';
+
 
 
 
@@ -16,11 +17,11 @@ const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li className="nav-item"><a className="nav-link" href="/">Productos</a></li>
-                        <li className="nav-item"><a className="nav-link" href="/">Portfolio</a></li>
-                        <li className="nav-item"><a className="nav-link" href="/">About</a></li>
-                        <li className="nav-item"><a className="nav-link" href="/">Servicios</a></li>
-                        <li className="nav-item"><a className="nav-link" href="/">Contacto</a></li>
+                        <NavLink className="nav-item"><a className="nav-NavLink" href="/">Home</a></NavLink>
+                        <NavLink className="nav-item"><a className="nav-NavLink" href="/">Productos</a></NavLink>
+                        <NavLink className="nav-item"><a className="nav-NavLink" href="/">Servicios</a></NavLink>
+                        <NavLink className="nav-item"><a className="nav-NavLink" href="/">Quienes somos</a></NavLink>
+                        <NavLink className="nav-item"><a className="nav-NavLink" href="/">Contacto</a></NavLink>
                     </ul>
                     <CardWidgest />
                 </div>

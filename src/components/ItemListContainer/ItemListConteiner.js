@@ -3,6 +3,7 @@ import ItemList from '../itemList/ItemList';
 import { product } from '../config/Index';
 import { useEffect, useState } from 'react';
 
+
 const ItemListConteiner = ({greeting}) => { 
     
   const [productos, setProductos] = useState([]);
@@ -30,11 +31,10 @@ const ItemListConteiner = ({greeting}) => {
   return (
     <div style={{color:'GrayText', fontSize:'2.5rem', textAlign:'center', marginTop:'150px', width:'100%', borderBottomStyle:'ridge'}}>
         <p>{greeting}</p>
-
+      
       <ItemList productos={productos}/>
 
-
-    </div>
+   </div>
   )
 }
 

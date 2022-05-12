@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 
 
-const ItemCount = ({ stock, initial, onAdd}) => {
+const ItemCount = ({ stock, initial, vista, onAdd}) => {
 
-    const [ contador, setContador] = useState (initial || 10);
+    const [ contador, setContador] = useState (initial);
+    // const [ view, setView] = useState(vista);
 
     const Restar = () =>{
         if(contador === 1){
@@ -13,6 +14,8 @@ const ItemCount = ({ stock, initial, onAdd}) => {
         else{
             setContador(contador - 1)
         }
+        
+        
     };
 
     const Sumar = () =>{
@@ -24,24 +27,27 @@ const ItemCount = ({ stock, initial, onAdd}) => {
         }
     };
 
-    const agregarCarrito = () => {
-        onAdd(contador)
-    }
-
+        // useEffect(() => {
+        //   setView(vista)
+        
+        //   return () => { };
+        // }, [vista])
     return (
     <div style={{textAlign:'Center', marginTop:'20px', background:'#d9dee6',width:'50%'}}>
         
         
-        <h1> Espejo: {contador}</h1>
+        
         <div style={{display:'flex', justifyContent:'center', margin:'2px', alignContent:'baseline'}}>
-            <button style={{border:'none', borderRadius: "2px" }} 
-                    onClick ={() => setContador (Sumar)} >+</button>
-            <h3>{contador}</h3>
-            <button style={{border:'none', borderRadius: "2px" }} 
-                    onClick ={() => setContador (Restar)}>-</button>
+            <button  style={{border:'display', borderRadius: "2px", margin:'10px', background:'#fbd9aa'  }} 
+                    onClick ={contador < stock ? Sumar : () => {}} >+</button>
+            
+            <h1> {contador}</h1>
+
+            <button style={{border:'display', borderRadius: "2px", margin:'10px', background:'#fbd9aa' }} 
+                    onClick ={contador > initial ? Restar : () => {}}>-</button>
         </div>
         <div>
-            <button onClick={agregarCarrito}>Agregar al Carrito : {contador}</button>
+            <button style={{borderRadius: "5px", background:'#efb059' }} onClick={() => onAdd(contador)}>Agregar al Carrito : {contador}</button>
         </div>
     </div>
   )
