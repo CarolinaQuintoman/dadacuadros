@@ -1,54 +1,40 @@
-import Acuarelas from '../../assets/28042022.jpg';
-import Marcos from '../../assets/28042034.jpg';
-import Espejos from '../../assets/280420308.jpg';
-import DiseñosPropios from '../../assets/28042031.jpg';
-import Decoracion from '../../assets/280420307.jpg';
-import Paisajes from '../../assets/2804203043.jpg';
+import React from 'react'
+import { product } from '../config/Index'
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import ItemDetail from './ItemDetail'
 
-export const product = [
-    {
-      id:1,
-      imagen: Acuarelas,
-      precio: "$3000",
-      titulo: "Acuarelas"
-    },
-    {
-      id:1,
-      imagen: Marcos,
-      precio: "$5000",
-      titulo: "Marcos"
-    },
-    {
-      id:1,
-      imagen: Espejos,
-      precio: "$3900",
-      titulo: "Espejos"
-    },
-    {
-      id:1,
-      imagen: DiseñosPropios,
-      precio: "$5000",
-      titulo: "Diseños"
-    },
-    {
-      id:1,
-      imagen: Decoracion,
-      precio: "$7000",
-      titulo: "Decoración"
-    },
-    {
-      id:1,
-      imagen: Paisajes,
-      precio: "$3800",
-      titulo: "Paisajes"
-    }
-  ];
-    
+
+
+const ItemDetailConteiner = () => {
+
+  const {id} = useParams();     //useparams es un hook
+  const [ producto, setProducto] = useState(null);
   
-  export const getProduct = () =>{
-      return new Promise ((resolve,reject) => {
+  const filtrar = product.find((prod) => prod.id === Number (id))
+  console.log(filtrar)
+
+  useEffect(() => { 
+    const promesa = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+      resolve(filtrar)
+    }, 2000);
+    });
+
+    promesa
+    .then((res) =>{
+      setProducto(res)    //le estoy cambiando el estado
+    })
+    .then(() => console.log(producto))
+    .catch((err) => console.log (err));
   
-        setTimeout(() => resolve(product),2000);
-  
-      });
-    };
+  }, [producto,filtrar]);
+
+  return (
+    <div>
+      {producto ? <ItemDetail producto={producto}/> : <h1>Cargando</h1>  }
+    </div>
+  )
+}
+
+export default ItemDetailConteiner

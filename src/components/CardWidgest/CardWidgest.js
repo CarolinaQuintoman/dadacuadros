@@ -5,8 +5,8 @@ import { faCartShopping} from '@fortawesome/free-solid-svg-icons'
 const CardWidgest = () => {
   return (
     <nav className="navbar">
-        <h3 className="nav-link" href="#carrito" style={{fontSize:'20px', color:'#7e90b4'}}>
-            <FontAwesomeIcon icon={faCartShopping}/></h3>
+        <h3 className="nav-link" href="#carrito" style={{fontSize:'20px', color:'rgb(189 198 38)'}}>
+            <FontAwesomeIcon icon={faCartShopping}/> 2 </h3>
     </nav>
 
   )

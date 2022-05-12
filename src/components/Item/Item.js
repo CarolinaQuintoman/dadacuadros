@@ -1,33 +1,36 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 
 
-const Item = ({ product }) => {
+
+const Item = ({ 
+  id, imagen, titulo, precio, descripcion, categoria
+ }) => {
   return (
     
-    <section className="page-section bg-light" id="portfolio">
+    <section>
       <div className="container">
-        <div className="row">
+        <div >
           <div className="col-lg-4 col-sm-6 mb-4">
             <div className="portfolio-item">
               <a className="portfolio-link" data-bs-toggle="modal" href="/">
                 <div className="portfolio-hover">
                   <div className="portfolio-hover-content"></div>
                 </div>
-                <img className="img-fluid" src={product.imagen} alt="..." />
+                <img className="img-fluid" src={imagen} alt="..." />
               </a>
               <div className="portfolio-caption">
-                <div className="portfolio-caption-heading">{product.titulo}</div>
+                <div className="portfolio-caption-heading">{titulo}</div>
                 <div className="portfolio-caption-subheading text-muted">
-                  {product.precio}
+                  {precio}
                 </div>
-                <a className="btn btn-primary btn-xl text-uppercase" href="/">
+                <NavLink to={`/detail/${id}`} className="btn btn-primary btn-xl text-uppercase" href="/">
                   ver mas detalles
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-sm-6 mb-4"></div>
         </div>
       </div>
     </section>

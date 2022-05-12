@@ -8,7 +8,7 @@ const ItemCount = ({ stock, initial, onAdd}) => {
 
     const Restar = () =>{
         if(contador === 1){
-            console.log('No hay mas Stock Disponible')
+            console.log('No hay nada para restar')
         }
         else{
             setContador(contador - 1)

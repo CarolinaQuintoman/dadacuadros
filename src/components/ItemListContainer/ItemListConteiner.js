@@ -1,23 +1,39 @@
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../itemList/ItemList';
+import { product } from '../config/Index';
+import { useEffect, useState } from 'react';
 
+const ItemListConteiner = ({greeting}) => { 
+    
+  const [productos, setProductos] = useState([]);
 
+  useEffect(() => {
+    const promesa = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(product);
+      }, 2000);
+    });
+    promesa
+    .then((res) => {
+      setProductos(res);
+    })
+    .then(() =>
+      console.log(productos)
+    )
+    .catch((err) =>
+      console.log(err));
 
-const ItemListConteiner = ({greeting}) => {
-
+    console.log(productos);
+    }, [productos]);
   
-    
-  const onAdd = (cantidad) =>{
-    
-  }
 
   return (
     <div style={{color:'GrayText', fontSize:'2.5rem', textAlign:'center', marginTop:'150px', width:'100%', borderBottomStyle:'ridge'}}>
         <p>{greeting}</p>
 
-      <ItemList />
-      <ItemCount stock={10} initial={1} onAdd={onAdd} />
+      <ItemList productos={productos}/>
+
+
     </div>
   )
 }
