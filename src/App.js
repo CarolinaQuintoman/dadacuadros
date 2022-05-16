@@ -1,19 +1,16 @@
-import './App.css';
-import ItemListConteiner from './components/ItemListContainer/ItemListConteiner';
-import NavBar from './components/navBar/NavBar';
-
+import React from 'react';
+import GlobalStateContext from './Context/GlobalStateContext';
+import Rutas from './Routes/Rutas';
 
 
 
 function App() {
   return (
-    <div>
-      <NavBar/>
-      <ItemListConteiner
-      greeting={'Nuestros Productos'}
-      />
-         
-    </div>
+    <>
+      <GlobalStateContext>
+        <Rutas />
+      </GlobalStateContext>
+    </>
   );
 }
 
