@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemList from '../itemList/ItemList';
+import ItemList from '../ItemList/ItemList';
 import { product } from '../config/Index';
 import { useEffect, useState } from 'react';
 
@@ -32,7 +32,7 @@ const ItemListConteiner = ({greeting}) => {
     <div style={{color:'GrayText', fontSize:'2.5rem', textAlign:'center', marginTop:'150px', width:'100%', borderBottomStyle:'ridge'}}>
         <p>{greeting}</p>
       
-      <ItemList productos={productos}/>
+      <ItemList productos={productos} />
 
    </div>
   )

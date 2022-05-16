@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from '../Item/Item';
+import Loader from '../Loader/Loader';
 
 const ItemList = ({productos}) => {
     
@@ -17,7 +18,7 @@ const ItemList = ({productos}) => {
                
                />)
            ) : (
-             <h1>Cargando . . .</h1>
+             <h1><Loader/></h1>
            )
          }
       </>

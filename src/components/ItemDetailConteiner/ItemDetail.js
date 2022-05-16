@@ -63,25 +63,19 @@ const ItemDetail = ({producto}) => {
                       Marcos
                     </li>
                   </ul>
-                  <button
-                    className="btn btn-primary btn-xl text-uppercase"
-                    data-bs-dismiss="modal"
-                    type="button"
-                  >
-                    <i className="fas fa-xmark me-1"></i>
-                    comprar
-                  </button>
+                  
                   <ItemCount
                     stock={stock}
                     visible={visible}
                     initial={initial} 
-                    onAdd={onAdd} />
+                    onAdd={onAdd} 
+                    />
                   <>
                     {visible === 'none' ? (
                       <React.Fragment>
                         <button className='btn btn-outline-info' style={{with:'20px', background:'#fbd9aa', borderRadius: "5px", marginTop:'5px'}}>
-                          <NavLink to='/Cart' style={{}}>
-                            Finalizar Compra {cantidad} productos
+                          <NavLink to='/Card'>
+                            Ir al Carrito {cantidad} productos
                           </NavLink>
                         </button>
                       </React.Fragment>

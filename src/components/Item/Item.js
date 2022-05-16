@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 
 
+
 const Item = ({ 
   id, imagen, titulo, precio, descripcion, categoria
  }) => {
+   
   return (
     
     <section>
@@ -25,7 +27,8 @@ const Item = ({
                 <div className="portfolio-caption-subheading text-muted">
                   {precio}
                 </div>
-                <Link to={`/detail/${id}`} className="btn btn-primary btn-xl text-uppercase" href="/">
+                
+                <Link to={`/detail/${id}`} className="btn btn-primary btn-xl text-uppercase" >
                   ver mas detalles
                 </Link>
               </div>
